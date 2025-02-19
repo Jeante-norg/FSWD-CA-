@@ -21,8 +21,16 @@ function InventoryList() {
   return (
     <>
       <h1>Inventory List: </h1>
-      {data.map((item) => {
-        return <InventoryItem />;
+      {data?.map((item) => {
+        return (
+          <InventoryItem
+            key={item._id}
+            name={item.name}
+            description={item.description}
+            price={item.price}
+            quantity={item.quantity}
+          />
+        );
       })}
       <InventoryItem />
     </>
